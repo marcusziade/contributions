@@ -1,9 +1,12 @@
-```markdown
 # GitHub Contributions Visualization
 
-This repository contains scripts to fetch, process, and visualize GitHub contributions. The visualizations include a line chart, bar chart, and pie chart, all combined into one image.
+![CleanShot 2024-05-18 at 15 27 19](https://github.com/marcusziade/contributions/assets/47460844/cbd473e7-e507-49c9-83ab-6fdd453da307)
+
+
 
 ## How to Generate Your Own Visualizations
+
+```markdown
 
 ### Prerequisites
 
