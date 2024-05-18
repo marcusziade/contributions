@@ -55,18 +55,15 @@ type Response struct {
 }
 
 func main() {
-	// Set up the GraphQL client
 	client := graphql.NewClient("https://api.github.com/graphql")
 	req := graphql.NewRequest(query)
 	req.Header.Set("Authorization", "Bearer "+os.Getenv("GITHUB_TOKEN"))
 
-	// Set the parameters
 	username := "marcusziade"
 	now := time.Now()
 
 	var allContributionDays []ContributionDay
 
-	// Fetch contributions for the past 5 years
 	for i := 0; i < 5; i++ {
 		from := now.AddDate(-i-1, 0, 0).Format(time.RFC3339)
 		to := now.AddDate(-i, 0, 0).Format(time.RFC3339)
@@ -85,13 +82,11 @@ func main() {
 		}
 	}
 
-	// Process the data
 	contributionData := make(map[string]int)
 	for _, day := range allContributionDays {
 		contributionData[day.Date] = day.ContributionCount
 	}
 
-	// Create a CSV file
 	file, err := os.Create("contributions.csv")
 	if err != nil {
 		log.Fatalf("Error creating CSV file: %v", err)
@@ -101,10 +96,8 @@ func main() {
 	writer := csv.NewWriter(file)
 	defer writer.Flush()
 
-	// Write header
 	writer.Write([]string{"Date", "Contributions"})
 
-	// Write data
 	for date, count := range contributionData {
 		if date == "" || count == 0 {
 			log.Printf("Skipping invalid record: Date='%s', Contributions=%d", date, count)
@@ -123,12 +116,10 @@ func main() {
 
 	fmt.Println("Contribution data written to contributions.csv")
 
-	// Verify CSV file content
 	if err := verifyCSV("contributions.csv"); err != nil {
 		log.Fatalf("Error verifying CSV file: %v", err)
 	}
 
-	// Call the Python script to generate the visualizations
 	cmd := exec.Command("python3", "visualize_contributions.py")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -161,3 +152,4 @@ func verifyCSV(filepath string) error {
 	fmt.Println("CSV file verification passed")
 	return nil
 }
+
