@@ -65,5 +65,3 @@ Include the generated image in your GitHub repository README or any documentatio
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-This README provides clear instructions for setting up the environment, fetching data, and generating visualizations, making it easy for anyone to follow and generate their own GitHub contributions visualizations.
