@@ -6,7 +6,6 @@
 
 ## How to Generate Your Own Visualizations
 
-```markdown
 
 ### Prerequisites
 
