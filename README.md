@@ -39,13 +39,6 @@
    pip install pandas matplotlib
    ```
 
-4. **Fetch GitHub Contributions:**
-   - Update the `username` variable in the Go script (`fetch_contributions.go`) to your GitHub username.
-   - Run the Go script to fetch your GitHub contributions and save them to a CSV file:
-     ```sh
-     go run fetch_contributions.go
-     ```
-
 5. **Generate Visualizations:**
    - Run the Python script to generate visualizations from the CSV file:
      ```sh
