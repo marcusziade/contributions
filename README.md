@@ -38,12 +38,11 @@
    ```sh
    pip install pandas matplotlib
    ```
-
-5. **Generate Visualizations:**
-   - Run the Python script to generate visualizations from the CSV file:
-     ```sh
-     python3 visualize_contributions.py
-     ```
+   
+4. **Run the Go program:**
+   ```sh
+   go run main.go
+   ```
 
 ### Result
 
